@@ -1,54 +1,130 @@
 <!DOCTYPE html>
-<html lang="">
+<!-- saved from url=(0053)https://getbootstrap.com/docs/4.0/examples/jumbotron/ -->
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="https://getbootstrap.com/docs/4.0/assets/img/favicons/favicon.ico">
+
+  <title>Jumbotron Template for Bootstrap</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/jumbotron/">
+
+  <!-- Bootstrap core CSS -->
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="prism.css">
   <title>Drawing things</title>
-  <style>
-    body {
-      padding: 0;
-      margin: 0;
-    }
-    input, label, textarea {
-      display:block;
-    }
-  </style>
+
   <script src="p5Library/p5.js"></script>
+  <script src="prism.js"></script>
+  <script src="syntax.js"></script>
   <!-- <script src="../addons/p5.sound.js"></script> -->
   <script src="sketch.js"></script>
 
+
+  <style type="text/css">
+    @font-face {
+      font-family: Gilroy;
+      font-style: normal;
+      font-weight: 100 400;
+      src: url(https://pouch-global-font-assets.s3.eu-central-1.amazonaws.com/Gilroy-Medium.otf)
+    }
+
+    @font-face {
+      font-family: Gilroy;
+      font-style: normal;
+      font-weight: 500 900;
+      src: url(https://pouch-global-font-assets.s3.eu-central-1.amazonaws.com/Gilroy-Bold.otf)
+    }
+
+    @font-face {
+      font-family: "Font Awesome 5 Free";
+      font-style: normal;
+      font-weight: 900;
+      src: url(https://use.fontawesome.com/releases/v5.6.3/webfonts/fa-solid-900.woff2) format("woff2")
+    }
+
+    @font-face {
+      font-family: "Font Awesome 5 Brands";
+      font-style: normal;
+      font-weight: normal;
+      src: url(https://use.fontawesome.com/releases/v5.6.3/webfonts/fa-brands-400.woff2) format("woff2")
+    }
+  </style>
 </head>
 
-<body>
-  <main>
-    <h1>Draw something!</h1>
+<body data-new-gr-c-s-check-loaded="14.1032.0" data-gr-ext-installed="">
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <div>
-      <button id="do-it" onclick="doIt()"> Run </button>
-      <button id="loadPumpkin" onclick="loadPumpkin()"> load pumpkin code </button>
-      <button id="loadSnowman" onclick="loadSnowman()"> load snowman code </button>
-      <button id="loadCircles" onclick="loadCircles()"> load shapes code </button>
+
+
+  <main role="main">
+    <img id="logo" src="rgucomp.png" "/>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        
+        <h1 class="display-3">Hello, coder!</h1>
+        <p>You can carve a pumpkin, create a snowman and draw shapes, all just by writing some code. Use the window below to enter your code and see what creations you can make!
+        </p>
+
+        <p>Pick your starter code; pumpkin, snowman or shape. Press the RUN button to see what it looks like.</p>
+      </div>
     </div>
 
-    <div style="width: 50%; float:left;">
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row short" >
+        <div class="col-12 d-flex justify-content-center">
+          <button id="do-it" onclick="doIt()"> Run </button>
+          <button id="loadPumpkin" onclick="loadPumpkin()"> load pumpkin code </button>
+          <button id="loadSnowman" onclick="loadSnowman()"> load snowman code </button>
+          <button id="loadCircles" onclick="loadCircles()"> load shapes code </button>
+        </div>
+      </div class="row">
+
       <!-- <label for="codeBox">Code:</label>  -->
-      <textarea style="width: 100%;" id="codeBox" name="codeBox" rows="20" cols="50">
-      </textarea>
+      <div class="col-8">
+        <textarea id="codeBox" name="codeBox" spellcheck="false" oninput="update(this.value); sync_scroll(this);"
+          onscroll="sync_scroll(this);" onkeydown="check_tab(this, event);"></textarea>
+        <pre id="highlighting" aria-hidden="true">
+            <code class="language-js" id="highlighting-content">
+            </code>
+            </pre>
+      </div>
     </div>
-    <div id="theDrawing" style="width: 50%; float:right;">
+    <div class="col-4" id="theDrawing">
     </div>
+    <div class="row">
 
 
+      <hr>
+
+    </div> <!-- /container -->
+    <div class="push"></div>
   </main>
+
+  <footer class="container footer d-flex justify-content-center">
+    <p>Interested in studying computing @RGU Find out more <a href="https://www.rgu.ac.uk/study/types-of-study/undergraduate-courses/computing-undergraduate"> Here </a> </a></p>
+  </footer>
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="popper.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+
+
+  
 </body>
+
 
 </html>

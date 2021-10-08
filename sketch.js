@@ -13,14 +13,20 @@ function doIt() {
 
 function loadPumpkin() {
   document.getElementById("codeBox").value = pumpkinCodeString
+  document.getElementById("highlighting-content").innerHTML=pumpkinCodeString
+  Prism.highlightElement(document.getElementById("highlighting-content"));
 };
 
 function loadSnowman() {
   document.getElementById("codeBox").value = snowmanCodeString
+  document.getElementById("highlighting-content").value=snowmanCodeString
+  Prism.highlightElement(document.getElementById("highlighting-content"));
 };
 
 function loadCircles() {
   document.getElementById("codeBox").value = circlesCodeString
+  document.getElementById("highlighting-content").value=circlesCodeString
+  Prism.highlightElement(document.getElementById("highlighting-content"));
 };
 
 //function preload() {
