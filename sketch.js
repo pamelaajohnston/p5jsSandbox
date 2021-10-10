@@ -19,13 +19,13 @@ function loadPumpkin() {
 
 function loadSnowman() {
   document.getElementById("codeBox").value = snowmanCodeString
-  document.getElementById("highlighting-content").value=snowmanCodeString
+  document.getElementById("highlighting-content").innerHTML=snowmanCodeString
   Prism.highlightElement(document.getElementById("highlighting-content"));
 };
 
 function loadCircles() {
   document.getElementById("codeBox").value = circlesCodeString
-  document.getElementById("highlighting-content").value=circlesCodeString
+  document.getElementById("highlighting-content").innerHTML=circlesCodeString
   Prism.highlightElement(document.getElementById("highlighting-content"));
 };
 
