@@ -62,37 +62,44 @@ background(0, 0, 0);
 noStroke();
 
 // header
-fill(255, 153, 0);
+fill(252, 111, 3);
 textAlign(CENTER, TOP);
 textSize(30);
-text("Pumpkin carving contest!", width/2, 0);
+text("Carve me!", width/2, 0);
 
 // concrete
 fill(102, 102, 102);
 rect(0, 265, width, 200);
 
+// moon - two circles, one yellow, one black to match the sky
+fill(241, 252, 28)
+ellipse(50, 50, 70, 70)
+fill(0,0,0)
+ellipse(70, 50, 70, 70)
+
 // pumpkin center
-var pumpkinY = 232;
+var pumpkinY = 245;
 var pumpkinHeight = 250;
+var pumpkinWidth = width*0.8
 
 // pumpkin stem
 fill(53, 145, 14);
 stroke(3, 69, 0);
-var stemHeight = pumpkinHeight/10;
-var stemY = pumpkinY - pumpkinHeight/2 - stemHeight;
-quad(width/2-stemHeight/2, stemY,
-     width/2+stemHeight/2, stemY,
-     width/2+stemHeight, stemY+stemHeight*2,
-     width/2-stemHeight, stemY+stemHeight*2);
+var stemHeight = pumpkinHeight/8;
+var stemWidth = pumpkinHeight/10;
+var stemY = pumpkinY - pumpkinHeight/2 - (3*stemHeight/4);
+rect((width/2 - stemWidth/2), stemY, stemWidth, stemHeight, 4)
+
+// pumpkin shadow
+fill(25,25,25)
+ellipse(width/2 + 40, pumpkinY + pumpkinHeight/2 +10, pumpkinWidth, pumpkinHeight/5)
 
 // pumpkin body
-fill(255, 153, 0);
-stroke(255, 119, 0);
-ellipse(width/2-pumpkinHeight/3, pumpkinY+10, pumpkinHeight/3, pumpkinHeight*0.8);
-ellipse(width/2+pumpkinHeight/3, pumpkinY+10, pumpkinHeight/3, pumpkinHeight*0.8);
-ellipse(width/2+pumpkinHeight/5, pumpkinY+5, pumpkinHeight/3, pumpkinHeight*0.9);
-ellipse(width/2-pumpkinHeight/5, pumpkinY+5, pumpkinHeight/3, pumpkinHeight*0.9);
-ellipse(width/2, pumpkinY+7, pumpkinHeight/2, pumpkinHeight*0.95);
+fill(252, 111, 3);
+stroke(252, 99, 0);
+ellipse(width/2, pumpkinY, pumpkinWidth, pumpkinHeight)
+
+
 
 // your carving! what will you carve?
 `
