@@ -4,11 +4,11 @@ function doIt() {
 
       myResult = eval(userCode)
       //document.getElementById("codeBox").value = myResult
-      if (btn.innerHTML == "Run") {
-        btn.innerHTML = "Do it!";
-      } else {
-        btn.innerHTML = "Run";
-      }
+      //if (btn.innerHTML == "Run") {
+      //  btn.innerHTML = "Do it!";
+      //} else {
+      //  btn.innerHTML = "Run";
+      //}
    };
 
 function loadPumpkin() {
@@ -26,6 +26,12 @@ function loadSnowman() {
 function loadCircles() {
   document.getElementById("codeBox").value = circlesCodeString
   document.getElementById("highlighting-content").innerHTML=circlesCodeString
+  Prism.highlightElement(document.getElementById("highlighting-content"));
+};
+
+function loadGrid() {
+  document.getElementById("codeBox").value = gridCodeString
+  document.getElementById("highlighting-content").innerHTML=gridCodeString
   Prism.highlightElement(document.getElementById("highlighting-content"));
 };
 
@@ -176,4 +182,36 @@ triangle(288, 18, 351, 360, 288, 360);
 fill(255, 0, 0);
 arc(200, 300, 280, 280, PI, TWO_PI);
 
+`
+
+let gridCodeString=`
+background(255, 255, 255);
+noStroke();
+var videoScale = 8;
+var cols = width/videoScale;
+var rows = height/videoScale;
+
+// Begin loop for columns
+for (var i = 0; i < cols; i++) {
+  // Begin loop for rows
+  for (var j = 0; j < rows; j++) {
+
+    // Scaling up to draw a rectangle at (x,y)
+    var x = i*videoScale;
+    var y = j*videoScale;
+    fill(255);
+    stroke(0);
+    // For every column and row, a rectangle is drawn at an (x,y) location scaled and sized by videoScale.
+    rect(x, y, videoScale, videoScale);
+  }
+}
+// header
+fill(0, 0, 0);
+textAlign(CENTER, TOP);
+textSize(30);
+text("A grid", width/2, 0);
+
+textAlign(LEFT, TOP); // LEFT, TOP of text aligns with point (0,0) in the drawing area
+textSize(10);
+text("(0,0)", 0, 0);
 `

@@ -81,31 +81,60 @@
       <div class="row short" >
         <div class="col-12 d-flex justify-content-center">
           <button id="do-it" onclick="doIt()"> Run </button>
-          <button id="loadSnowman" onclick="loadSnowman()"> load snowman code </button>
-          <button id="loadPumpkin" onclick="loadPumpkin()"> load pumpkin code </button>
-          <button id="loadCircles" onclick="loadCircles()"> load shapes code </button>
+          <button id="loadSnowman" onclick="loadSnowman()"> load snowman </button>
+          <button id="loadPumpkin" onclick="loadPumpkin()"> load pumpkin </button>
+          <button id="loadCircles" onclick="loadCircles()"> load shapes </button>
+          <button id="loadGrid" onclick="loadGrid()"> load grid </button>
         </div>
       </div class="row">
 
       <!-- <label for="codeBox">Code:</label>  -->
-      <div class="col-8">
-        <textarea id="codeBox" name="codeBox" rows="100" columns="100" spellcheck="false" oninput="update(this.value); sync_scroll(this);"
-          onscroll="sync_scroll(this);" onkeydown="check_tab(this, event);" ></textarea>
-        <pre id="highlighting" aria-hidden="true">
-            <code class="language-js" id="highlighting-content">
-            </code>
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+          <div class="col-8">
+            <textarea id="codeBox" name="codeBox" rows="100" columns="100" spellcheck="false" oninput="update(this.value); sync_scroll(this);"
+              onscroll="sync_scroll(this);" onkeydown="check_tab(this, event);" ></textarea>
+            <pre id="highlighting" aria-hidden="true">
+                <code class="language-js" id="highlighting-content">
+                </code>
             </pre>
+          </div>
+          <div class="col-4" id="theDrawing"></div>
+        </div>
       </div>
     </div>
-    <div class="col-4" id="theDrawing">
-    </div>
+
+
     <div class="row">
 
 
       <hr>
+      <div class="container-fluid" id="theInstructions">
+        <h2> Some instructions: </h2>
+
+        <ol>
+          <li>The drawing code is based on Processing and full documentation is available <a href="https://p5js.org/examples/"> here</a>. </li>
+          <li>The drawing space is 400 by 400. The (0,0) co-ordinate is at the top left of the grid. </li>
+          <li> fill(0,0,0) sets the drawing fill colour to black. You can choose other colours with an <a href="https://www.w3schools.com/colors/colors_picker.asp"> RGB colour picker </a></li>
+          <li>Load the grid and try drawing:</li>
+            <ul>
+              <li> A circle in the middle (200, 200) of the drawing box: ellipse(200, 200, 100, 100) </li>
+              <li> A rectangle with top left corner in the middle of the drawing box: rect(200, 200, 100, 100) </li>
+              <li> A triangle with three corners: triangle(200, 50, 100, 200, 300, 200)
+            </ul>
+          <li> Change the numbers and see the effects! </li>
+        </ol>
+      </div>
+
+
 
     </div> <!-- /container -->
+
+
+
     <div class="push"></div>
+
+
   </main>
 
   <footer class="container footer d-flex justify-content-center">
