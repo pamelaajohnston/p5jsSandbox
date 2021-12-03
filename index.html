@@ -67,12 +67,12 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        
+
         <h1 class="display-3">Hello, coder!</h1>
-        <p>You can carve a pumpkin, create a snowman and draw shapes, all just by writing some code. Use the window below to enter your code and see what creations you can make!
+        <p>You can create a snowman, carve a pumpkin and draw shapes, all just by writing some code. Use the window below to enter your code and see what creations you can make!
         </p>
 
-        <p>Pick your starter code; pumpkin, snowman or shape. Press the RUN button to see what it looks like.</p>
+        <p>Pick your starter code; snowman, pumpkin or shapes. Press the RUN button to see what it looks like.</p>
       </div>
     </div>
 
@@ -81,16 +81,16 @@
       <div class="row short" >
         <div class="col-12 d-flex justify-content-center">
           <button id="do-it" onclick="doIt()"> Run </button>
-          <button id="loadPumpkin" onclick="loadPumpkin()"> load pumpkin code </button>
           <button id="loadSnowman" onclick="loadSnowman()"> load snowman code </button>
+          <button id="loadPumpkin" onclick="loadPumpkin()"> load pumpkin code </button>
           <button id="loadCircles" onclick="loadCircles()"> load shapes code </button>
         </div>
       </div class="row">
 
       <!-- <label for="codeBox">Code:</label>  -->
       <div class="col-8">
-        <textarea id="codeBox" name="codeBox" spellcheck="false" oninput="update(this.value); sync_scroll(this);"
-          onscroll="sync_scroll(this);" onkeydown="check_tab(this, event);"></textarea>
+        <textarea id="codeBox" name="codeBox" rows="100" columns="100" spellcheck="false" oninput="update(this.value); sync_scroll(this);"
+          onscroll="sync_scroll(this);" onkeydown="check_tab(this, event);" ></textarea>
         <pre id="highlighting" aria-hidden="true">
             <code class="language-js" id="highlighting-content">
             </code>
@@ -123,7 +123,7 @@
   <script src="bootstrap.min.js"></script>
 
 
-  
+
 </body>
 
 
